@@ -23,6 +23,7 @@ public class Controller {
         return new ResponseEntity<>(applesRepository.findAll(), HttpStatus.OK);
     }
 
+
     @PostMapping
     public void saveApples(){
         Arrays.asList(new Apples("macintosh", 15), new Apples("antonovka", 17)).forEach(applesRepository::save);
