@@ -9,7 +9,7 @@ pipeline {
        }
 
     stage('Build') {
-           sh '''mvn clean install -DSkipTests=true'''
+           sh '''./mvnw clean install -DskipTests=true'''
        }
 
     stage('Build and Push Image') {
