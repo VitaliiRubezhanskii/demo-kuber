@@ -9,6 +9,7 @@ pipeline {
        }
 
     stage('Build') {
+           sh 'echo $pwd'
            sh '''./mvnw clean install -DskipTests=true'''
        }
 
