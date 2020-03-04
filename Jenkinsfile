@@ -4,7 +4,7 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                echo 'Building responded..'
+                echo 'Building responded on..'
             }
         }
         stage('Test') {
