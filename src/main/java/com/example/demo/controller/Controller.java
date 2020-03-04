@@ -17,7 +17,6 @@ public class Controller {
     public ResponseEntity<List<Apples>> getApples(){
 
 
-
         return new ResponseEntity<>( Arrays.asList(new Apples("macintosh", 15), new Apples("antonovka", 17)), HttpStatus.OK);
     }
 
