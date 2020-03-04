@@ -12,7 +12,6 @@ import java.util.List;
 @RestController
 public class Controller {
 
-
     @GetMapping(value = "/api/data")
     public ResponseEntity<List<Apples>> getApples(){
 
