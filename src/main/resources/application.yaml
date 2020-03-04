@@ -1,19 +1,18 @@
-spring:
-  jpa:
-    properties:
-      hibernate:
-        default_schema: public
-        format-sql: true
-        dialect: org.hibernate.dialect.PostgreSQLDialect
-        temp:
-          use_jdbc_metadata_defaults: false
-    hibernate:
-      ddl-auto: create
-    show-sql: true
-
-  datasource:
-    driver-class-name: org.postgresql.Driver
-    username: ${RDS_USERNAME}
-    password: ${RDS_PASSWORD}
-    url: jdbc:postgresql://${RDS_HOSTNAME}:${RDS_PORT}/${RDS_DB_NAME}
-
+#spring:
+#  jpa:
+#    properties:
+#      hibernate:
+#        default_schema: public
+#        format-sql: true
+#        dialect: org.hibernate.dialect.PostgreSQLDialect
+#        temp:
+#          use_jdbc_metadata_defaults: false
+#    hibernate:
+#      ddl-auto: create
+#    show-sql: true
+#
+#  datasource:
+#    driver-class-name: org.postgresql.Driver
+#    username: ${RDS_USERNAME}
+#    password: ${RDS_PASSWORD}
+#    url: jdbc:postgresql://${RDS_HOSTNAME}:${RDS_PORT}/${RDS_DB_NAME}

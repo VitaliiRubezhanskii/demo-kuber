@@ -1,5 +1,5 @@
 pipeline {
-
+   agent any
 
    stages {
 
@@ -8,7 +8,13 @@ pipeline {
        }
 
     stage('Build') {
-           sh 'mvn clean install -DSkipTests=true'
+           sh '''mvn clean install -DSkipTests=true'''
        }
+
+    stage('Build and Push Image') {
+            steps {
+              sh 'docker image build -t 063132795330.dkr.ecr.eu-central-1.amazonaws.com/inflotrolix .'
+            }
+         }
    }
 }
