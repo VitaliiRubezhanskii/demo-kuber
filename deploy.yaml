@@ -1,0 +1,44 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: demo
+spec:
+  selector:
+    matchLabels:
+      app: demo
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: demo
+    spec:
+      containers:
+        - name: demo
+          image: 063132795330.dkr.ecr.eu-central-1.amazonaws.com/inflotrolix:latest
+          env:
+            - name: RDS_HOSTNAME
+              value: inflotrolix.czf6yai59ku1.eu-central-1.rds.amazonaws.com
+            - name: RDS_PORT
+              value: '5432'
+            - name: RDS_USERNAME
+              value: postgres
+            - name: RDS_PASSWORD
+              value: postgres
+            - name: RDS_DB_NAME
+              value: demo
+          ports:
+            - containerPort: 8080
+          imagePullPolicy: Always
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: demo
+spec:
+  ports:
+      - port: 8080
+        protocol: TCP
+  selector:
+    app: demo
+  type: NodePort
