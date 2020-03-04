@@ -5,7 +5,7 @@ pipeline {
 
     stage('Preparation') {
           cleanWs()
-          git credentialsId: 'GitHub', url: "https://github.com/VitaliiRubezhanskii/iotconsumer.git"
+          git credentialsId: 'GitHub', url: "https://github.com/VitaliiRubezhanskii/demo-kuber.git"
        }
 
     stage('Build') {
