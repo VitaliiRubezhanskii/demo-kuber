@@ -15,6 +15,7 @@ public class Controller {
 
     @GetMapping(value = "/api/data")
     public ResponseEntity<List<Apples>> getApples(){
+
         return new ResponseEntity<>( Arrays.asList(new Apples("macintosh", 15), new Apples("antonovka", 17)), HttpStatus.OK);
     }
 
