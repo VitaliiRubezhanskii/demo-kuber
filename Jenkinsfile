@@ -3,8 +3,9 @@ pipeline {
 
    stages {
 
-    stage('Checkout') {
-           git 'https://github.com/VitaliiRubezhanskii/iotconsumer.git'
+    stage('Preparation') {
+          cleanWs()
+          git credentialsId: 'GitHub', url: "https://github.com/VitaliiRubezhanskii/iotconsumer.git"
        }
 
     stage('Build') {
